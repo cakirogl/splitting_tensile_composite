@@ -23,9 +23,9 @@ et_url="https://raw.githubusercontent.com/cakirogl/splitting_tensile_composite/m
 lgbm_url="https://raw.githubusercontent.com/cakirogl/splitting_tensile_composite/main/lgbm_model.pkl"
 xgb_url="https://raw.githubusercontent.com/cakirogl/splitting_tensile_composite/main/xgb_model.pkl"
 response = requests.get(et_url)
-et_model = pickle.loads(response.content)
-#et_model = ExtraTreesRegressor()
-#et_model.fit(x,y)
+#et_model = pickle.loads(response.content)
+et_model = ExtraTreesRegressor()
+et_model.fit(x,y)
 
 ic=st.container()
 ic1,ic2 = ic.columns(2)
