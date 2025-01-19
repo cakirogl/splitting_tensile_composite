@@ -1,15 +1,5 @@
-seaborn
 streamlit
 pandas
 numpy
-scikit-learn==1.2.2
-requests
-catboost
 scikit-learn
-matplotlib
-xgboost
-lightgbm
 requests
-pandas
-numpy
-openpyxl
