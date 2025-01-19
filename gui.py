@@ -3,6 +3,7 @@ import pickle
 import requests
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 data_url="https://raw.githubusercontent.com/cakirogl/splitting_tensile_composite/refs/heads/main/inliers0.01.csv"
 df = pd.read_csv(data_url, header=0)
