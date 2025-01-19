@@ -39,7 +39,7 @@ with ic1:
 with ic2:
     SP = st.number_input("**Superplasticizer [$kg/m^3$]**", min_value=0.0, max_value=20.5, step=2.5, value=0.0)
     NFP = st.number_input("**Natural Fiber Percentage**", min_value=0.0, max_value=3.0, step=1.0, value=0.0)
-    FT = st.select_box("**Fiber Type**"["None", "Jute", "Kenaf", "Bamboo", "Sisal", "Coir", "Ramie"])
+    FT = st.select_box("**Fiber Type**", ["None", "Jute", "Kenaf", "Bamboo", "Sisal", "Coir", "Ramie"])
     if FT=="None":
         FT=0.0
     elif FT == "Jute":
