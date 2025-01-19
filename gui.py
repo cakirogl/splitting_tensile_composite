@@ -59,4 +59,4 @@ with ic2:
 oc=st.container()
 new_sample = np.array([[cement, WB, FA, CA, RCA, SCM, SP, NFP, FT, L, Age]], dtype=object)
 with ic2:
-    st.write(f":blue[**The tensile strength = **{model.predict(new_sample)[0]:.2f}** [MPa]**]")
+    st.write(f":blue[**The tensile strength = **{et_model.predict(new_sample)[0]:.2f}** [MPa]**]")
