@@ -3,6 +3,7 @@ import pickle
 import requests
 import pandas as pd
 import numpy as np
+from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 data_url="https://raw.githubusercontent.com/cakirogl/splitting_tensile_composite/refs/heads/main/inliers0.01.csv"
@@ -15,13 +16,16 @@ df['Fiber Type'] = le.fit_transform(df['Fiber Type'])
 # Split features and target
 x = df.iloc[:,:-1].values  # Convert to numpy array
 y = df.iloc[:,-1].values   # Convert to numpy array
-
+scaler=StandardScaler()
+x=scaler.fit_transform(x)
 
 et_url="https://raw.githubusercontent.com/cakirogl/splitting_tensile_composite/main/et_model.pkl"
 lgbm_url="https://raw.githubusercontent.com/cakirogl/splitting_tensile_composite/main/lgbm_model.pkl"
 xgb_url="https://raw.githubusercontent.com/cakirogl/splitting_tensile_composite/main/xgb_model.pkl"
 response = requests.get(et_url)
-et_model = pickle.loads(response.content)
+#et_model = pickle.loads(response.content)
+et_model = ExtraTreesRegressor()
+et_model.fit(x,y)
 
 ic=st.container()
 ic1,ic2 = ic.columns(2)
