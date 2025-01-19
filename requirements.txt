@@ -1,5 +1,9 @@
 seaborn
-sklearn
+streamlit
+pandas
+numpy
+scikit-learn
+requests
 catboost
 scikit-learn
 matplotlib
